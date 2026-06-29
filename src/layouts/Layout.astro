@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en" class="light">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Portfolio — Designer & Developer" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
+		<title>Portfolio</title>
+		<script is:inline>
+			(function() {
+				var t = localStorage.getItem('theme');
+				if (!t) { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+				document.documentElement.className = t;
+			})();
+		</script>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+	:root {
+		--bg: #FAFAFA;
+		--bg-card: #FFFFFF;
+		--bg-subtle: rgba(24,24,27,0.04);
+		--bg-hover: rgba(24,24,27,0.05);
+		--text-primary: #18181B;
+		--text-secondary: #52525B;
+		--text-muted: #71717A;
+		--text-faint: #A1A1AA;
+		--border: rgba(24,24,27,0.06);
+		--border-strong: rgba(24,24,27,0.1);
+		--selection-bg: #18181B;
+		--selection-text: #FAFAFA;
+		--scrollbar: rgba(24,24,27,0.15);
+		--scrollbar-hover: rgba(24,24,27,0.3);
+		--nav-bg: rgba(250,250,250,0.75);
+		--overlay-bg: rgba(250,250,250,0.95);
+		--grain-opacity: 0.015;
+		--btn-primary-bg: #18181B;
+		--btn-primary-text: #FAFAFA;
+		--btn-primary-hover: #27272A;
+		--badge-bg: rgba(24,24,27,0.04);
+		--badge-border: rgba(24,24,27,0.06);
+		--accent-1: rgba(24,24,27,0.03);
+		--accent-2: rgba(24,24,27,0.06);
+		--accent-3: rgba(24,24,27,0.08);
+		--card-shadow: 0 20px 60px rgba(0,0,0,0.06);
+	}
+
+	html.dark {
+		--bg: #0A0A0B;
+		--bg-card: #121214;
+		--bg-subtle: rgba(250,250,250,0.04);
+		--bg-hover: rgba(250,250,250,0.06);
+		--text-primary: #F4F4F5;
+		--text-secondary: #D4D4D8;
+		--text-muted: #A1A1AA;
+		--text-faint: #71717A;
+		--border: rgba(250,250,250,0.06);
+		--border-strong: rgba(250,250,250,0.1);
+		--selection-bg: #F4F4F5;
+		--selection-text: #0A0A0B;
+		--scrollbar: rgba(250,250,250,0.15);
+		--scrollbar-hover: rgba(250,250,250,0.3);
+		--nav-bg: rgba(10,10,11,0.8);
+		--overlay-bg: rgba(10,10,11,0.95);
+		--grain-opacity: 0.04;
+		--btn-primary-bg: #F4F4F5;
+		--btn-primary-text: #0A0A0B;
+		--btn-primary-hover: #E4E4E7;
+		--badge-bg: rgba(250,250,250,0.04);
+		--badge-border: rgba(250,250,250,0.06);
+		--accent-1: rgba(250,250,250,0.03);
+		--accent-2: rgba(250,250,250,0.06);
+		--accent-3: rgba(250,250,250,0.08);
+		--card-shadow: 0 20px 60px rgba(0,0,0,0.3);
+	}
+
+	*,
+	*::before,
+	*::after {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	body {
+		font-family: 'Geist', sans-serif;
+		background: var(--bg);
+		color: var(--text-primary);
+		overflow-x: hidden;
+		width: 100%;
+		transition: background-color 0.4s ease, color 0.4s ease;
+	}
+
+	::selection {
+		background: var(--selection-bg);
+		color: var(--selection-text);
+	}
+
+	::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: var(--scrollbar);
+		border-radius: 3px;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: var(--scrollbar-hover);
+	}
+
+	img {
+		max-width: 100%;
+		display: block;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+</style>
